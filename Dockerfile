@@ -16,6 +16,9 @@ RUN \
   tar xvzf $ES_PKG_NAME.tar.gz && \
   rm -f $ES_PKG_NAME.tar.gz && \
   mv /$ES_PKG_NAME /elasticsearch
+  
+# Install Kuromoji Plugin
+RUN /elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-kuromoji/2.4.1
 
 # Define mountable directories.
 VOLUME ["/data"]
